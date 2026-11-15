@@ -1,0 +1,12 @@
+**/target/
+**/node_modules/
+**/dist/
+**/.angular/
+*.log
+.env
+.idea/
+*.pdf
+*.jpg
+*.png
+*.zip
+captures/

@@ -1,0 +1,81 @@
+{
+  "info": {
+    "name": "tp4-cqrs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Créer compte",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8086/accounts",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"balance\": 100}"
+        }
+      }
+    },
+    {
+      "name": "Activer",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8086/accounts/{{accountId}}/activate",
+        "header": []
+      }
+    },
+    {
+      "name": "Créditer",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8086/accounts/{{accountId}}/credit",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"amount\": 25}"
+        }
+      }
+    },
+    {
+      "name": "Débiter",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8086/accounts/{{accountId}}/debit",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"amount\": 10}"
+        }
+      }
+    },
+    {
+      "name": "Relevé",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8086/accounts/{{accountId}}/statement",
+        "header": []
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "accountId",
+      "value": "REMPLACER_PAR_ID_RETOURNE"
+    }
+  ]
+}

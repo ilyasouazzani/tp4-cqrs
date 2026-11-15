@@ -1,0 +1,2 @@
+package ma.ilyas;
+import org.springframework.data.jpa.repository.JpaRepository;import java.util.List;public interface OperationRepository extends JpaRepository<AccountOperation,String>{List<AccountOperation> findByAccountIdOrderByDateAsc(String id);}
